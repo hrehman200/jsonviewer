@@ -1,0 +1,127 @@
+.container {
+    width: 1200px;
+}
+
+.row div {
+    white-space: normal;
+}
+
+ul:first-child {
+    border: 1px solid #aaaaaa;
+}
+
+.tree, .tree ul {
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+.tree ul {
+    /*margin-left:1em;*/
+    position:relative;
+}
+.tree ul ul {
+    /*margin-left:.5em*/
+}
+.tree li > ul:before {
+    content:"";
+    display:block;
+    width:21px;
+    background-color:#F6F6F6;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    border-right:1px solid #aaaaaa;
+    cursor: pointer;
+    pointer-events: all;
+}
+.tree li {
+    margin-left:2em;
+    /*padding:0 2em;*/
+    line-height:1.35em;
+    color:black;
+    position:relative
+}
+.tree > .branch,
+.subTree > li {
+    margin-left:0;
+}
+li.branch {
+    border: 1px solid #aaaaaa;
+}
+.tree ul li:before {
+    content:"";
+    display:block;
+    width:10px;
+    height:0;
+    /*border-top:1px solid;*/
+    margin-top:-1px;
+    position:absolute;
+    top:1em;
+    left:0
+}
+.tree ul li:last-child:before {
+    /*background:#F6F6F6;*/
+    height:auto;
+    top:1em;
+    bottom:0
+}
+.indicator {
+    margin-right:5px;
+    background-color:#F6F6F6;
+    padding:3px;
+    border-right: 1px solid #aaaaaa;
+    cursor: pointer;
+}
+.tree li a {
+    text-decoration: none;
+    color:black;
+    font-weight:bold;
+}
+.tree li button,
+.tree li button:active,
+.tree li button:focus {
+    text-decoration: none;
+    color:black;
+    border:none;
+    background:transparent;
+    margin:0px 0px 0px 0px;
+    padding:0px 0px 0px 0px;
+    outline: 0;
+}
+
+
+.tree .row {
+    margin: 0;
+}
+.tree .col-md-6 {
+    padding-left: 3px;
+    /*border-bottom: 1px solid #aaaaaa;*/
+    border-top: 1px solid #aaaaaa;
+
+}
+
+.tree .col-md-6:first-child {
+    /*border-top: 1px solid #aaaaaa;*/
+    border-right: 1px solid #aaaaaa;
+    border-left: 1px solid #aaaaaa;
+}
+
+.brackets {
+    color:maroon;
+    text-shadow: 1px 1px #aaaaaa;
+}
+
+.yellowbg {
+    background-color: #FFFFE0;
+}
+
+.row .col-md-1 {
+    text-align: right;
+}
+
+/*.col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9 {
+    padding-left: 0;
+    padding-right: 0;
+}*/

@@ -1,0 +1,1155 @@
+{
+	"QIFDocument": {
+		"@idMax": 138,
+		"@versionQIF": "2.0.0",
+		"@xsi:schemaLocation": "http://qifstandards.org/xsd/qif2 ../QIFApplications/QIFDocument.xsd",
+		"Version": {
+			"ThisInstanceQPId": "e33a5a5b-b9e7-47c6-b548-a1ec71c72d02"
+		},
+		"Header": {
+			"Application": {
+				"Name": "Autodesk Mechanical Desktop 2009",
+				"AddonName": "CheckMate 2009",
+				"AddonOrganization": "Origin International Inc."
+			}
+		},
+		"PreInspectionTraceability": {
+			"InspectingOrganization": {
+				"Name": "Origin International Inc",
+				"Address": {
+					"StreetNumber": 3235,
+					"Street": "14th Avenue",
+					"Town": "Markham",
+					"Region": "Ontario",
+					"PostalCode": "L3R 0H3",
+					"FacsimileNumber": "905-470-2559",
+					"TelephoneNumber": "800-269-2509",
+					"ElectronicMailAddress": "support@origin.com"
+				}
+			},
+			"PurchaseOrderNumber": "Job No,",
+			"AsmPathIds": {
+				"@N": 1,
+				"Id": 3
+			},
+			"ReportNumber": "CheckMate Inspection Program",
+			"InspectionScope": "DETAIL",
+			"InspectionMode": "FAI_Full",
+			"FormalStandard": {
+				"FormalStandardEnum": "ASME-Y14.5-1994"
+			}
+		},
+		"FileUnits": {
+			"PrimaryUnits": {
+				"AngularUnit": {
+					"SIUnitName": "radian",
+					"UnitName": "degree",
+					"UnitConversion": {
+						"Factor": 0.017453292519943
+					}
+				},
+				"LinearUnit": {
+					"SIUnitName": "meter",
+					"UnitName": "mm",
+					"UnitConversion": {
+						"Factor": 0.001
+					}
+				}
+			}
+		},
+		"DatumDefinitions": {
+			"DatumDefinition": [
+				{
+					"@id": 116,
+					"DatumLabel": "A"
+				}, {
+					"@id": 117,
+					"DatumLabel": "B"
+				}, {
+					"@id": 118,
+					"DatumLabel": "C"
+				}
+			]
+		},
+		"DatumReferenceFrames": {
+			"DatumReferenceFrame": [
+				{
+					"@id": 11
+				}, {
+					"@id": 115,
+					"Datum": [
+						{
+							"SimpleDatum": {
+								"DatumDefinitionId": 116,
+								"MaterialModifier": "NONE",
+								"ReferencedComponent": "ACTUAL"
+							},
+							"Precedence": {
+								"PrecedenceEnum": "PRIMARY"
+							}
+						}, {
+							"SimpleDatum": {
+								"DatumDefinitionId": 117,
+								"MaterialModifier": "MAXIMUM",
+								"ReferencedComponent": "ACTUAL"
+							},
+							"Precedence": {
+								"PrecedenceEnum": "SECONDARY"
+							}
+						}, {
+							"SimpleDatum": {
+								"DatumDefinitionId": 118,
+								"MaterialModifier": "MAXIMUM",
+								"ReferencedComponent": "ACTUAL"
+							},
+							"Precedence": {
+								"PrecedenceEnum": "TERTIARY"
+							}
+						}
+					]
+				}
+			]
+		},
+		"MeasurementResources": {
+			"MeasurementDevices": {
+				"MeasurementDevice": {
+					"@id": 14,
+					"Name": "CMM"
+				}
+			}
+		},
+		"Product": {
+			"PartSet": {
+				"@N": 1,
+				"Part": {
+					"@id": 1,
+					"Name": 123456,
+					"QPId": "74628b6a-a2ae-4e18-86d1-9afdbbdc2214",
+					"ModelNumber": "Wing mirror reinforcement",
+					"Description": "Description of the part",
+					"Version": "Version",
+					"DefinitionExternal": {
+						"@id": 6,
+						"PrintedDrawing": {
+							"@id": 5,
+							"Name": "sheet2with6samples",
+							"Version": "1.0.0",
+							"Description": "Sample QIF elements",
+							"DrawingNumber": "#1",
+							"AdditionalChanges": "none",
+							"Location": "Cabinet 17, Drawer 3"
+						}
+					}
+				}
+			},
+			"ComponentSet": {
+				"@N": 1,
+				"Component": {
+					"@id": 2,
+					"QPId": "35bc4177-8609-47e1-9f63-379f8e30a6eb",
+					"Part": {
+						"Id": 1
+					}
+				}
+			},
+			"AsmPaths": {
+				"@N": 1,
+				"AsmPath": {
+					"@id": 3,
+					"ComponentIds": {
+						"@N": 1,
+						"Id": 2
+					}
+				}
+			}
+		},
+		"Features": {
+			"FeatureDefinitions": {
+				"EdgePointFeatureDefinition": [
+					{
+						"@id": 7,
+						"InternalExternal": "EXTERNAL"
+					}, {
+						"@id": 51,
+						"InternalExternal": "EXTERNAL"
+					}, {
+						"@id": 81,
+						"InternalExternal": "EXTERNAL"
+					}, {
+						"@id": 99,
+						"InternalExternal": "EXTERNAL"
+					}
+				],
+				"PointFeatureDefinition": [
+					{
+						"@id": 15
+					}, {
+						"@id": 21
+					}, {
+						"@id": 27
+					}, {
+						"@id": 33
+					}, {
+						"@id": 39
+					}, {
+						"@id": 45
+					}, {
+						"@id": 57
+					}, {
+						"@id": 63
+					}, {
+						"@id": 69
+					}, {
+						"@id": 75
+					}, {
+						"@id": 87
+					}, {
+						"@id": 93
+					}, {
+						"@id": 105
+					}
+				],
+				"CircleFeatureDefinition": [
+					{
+						"@id": 111,
+						"InternalExternal": "INTERNAL",
+						"Diameter": 10
+					}, {
+						"@id": 121,
+						"InternalExternal": "INTERNAL",
+						"Diameter": 10
+					}, {
+						"@id": 127,
+						"InternalExternal": "INTERNAL",
+						"Diameter": 10
+					}, {
+						"@id": 133,
+						"InternalExternal": "INTERNAL",
+						"Diameter": 10
+					}
+				]
+			},
+			"FeatureNominals": {
+				"EdgePointFeatureNominal": [
+					{
+						"@id": 8,
+						"FeatureDefinitionId": 7,
+						"Location": "2460.7099609375 770.604614257813 944.993591308594",
+						"Normal": "-0.73546588415666 -0.307902932145295 0.603560864882732",
+						"AdjacentNormal": "0.0411800179073908 -0.909449806293425 -0.413769568670774"
+					}, {
+						"@id": 52,
+						"FeatureDefinitionId": 51,
+						"Location": "2565.7392578125 775.538452148438 920.008422851563",
+						"Normal": "0.97169734689535 0.094852031880148 -0.216350082238824",
+						"AdjacentNormal": "0.0218587885636227 -0.94802103418136 -0.317456000277574"
+					}, {
+						"@id": 82,
+						"FeatureDefinitionId": 81,
+						"Location": "2549.34521484375 794.5849609375 855.000366210938",
+						"Normal": "0.971727230804546 0.0803130177021309 -0.222027043624206",
+						"AdjacentNormal": "0.021687332538204 -0.966755151633157 -0.254782527654722"
+					}, {
+						"@id": 100,
+						"FeatureDefinitionId": 99,
+						"Location": "2403.36083984375 808.974975585938 855.002258300781",
+						"Normal": "-0.999160325572721 -0.0372770121756262 -0.0170020047251222",
+						"AdjacentNormal": "0.0409709139821644 -0.909202693036924 -0.414333014834529"
+					}
+				],
+				"PointFeatureNominal": [
+					{
+						"@id": 16,
+						"FeatureDefinitionId": 15,
+						"Location": "2466.72924804688 774.269897460938 945.002746582031",
+						"Normal": "0.731520704664955 0.146124942550593 -0.66597669614715"
+					}, {
+						"@id": 22,
+						"FeatureDefinitionId": 21,
+						"Location": "2522.72216796875 755.170776367188 991.666442871094",
+						"Normal": "0.347667834280947 0.237461888724738 -0.907049573292263"
+					}, {
+						"@id": 28,
+						"FeatureDefinitionId": 27,
+						"Location": "2541.19067382813 767.65380859375 971.752868652344",
+						"Normal": "0.0418530037094572 -0.909167062298371 -0.414323036907492"
+					}, {
+						"@id": 34,
+						"FeatureDefinitionId": 33,
+						"Location": "2536.49487304688 782.806213378906 920.002197265625",
+						"Normal": "-0.760926041022405 -0.648538030188314 -0.0197479997323851"
+					}, {
+						"@id": 40,
+						"FeatureDefinitionId": 39,
+						"Location": "2550.15502929688 775.190979003906 919.996643066406",
+						"Normal": "0.021842990645291 -0.947984601169234 -0.317565866720085"
+					}, {
+						"@id": 46,
+						"FeatureDefinitionId": 45,
+						"Location": "2561.62670898438 775.4541015625 920.000244140625",
+						"Normal": "0.0218479992132415 -0.948013922967287 -0.317477978434021"
+					}, {
+						"@id": 58,
+						"FeatureDefinitionId": 57,
+						"Location": "2494.97998046875 818.732360839844 855.000854492188",
+						"Normal": "0.0418530037094572 -0.909167062298371 -0.414323036907492"
+					}, {
+						"@id": 64,
+						"FeatureDefinitionId": 63,
+						"Location": "2523.69995117188 801.422424316406 855.006286621094",
+						"Normal": "-0.946210381453245 -0.279307126138248 0.163320064041433"
+					}, {
+						"@id": 70,
+						"FeatureDefinitionId": 69,
+						"Location": "2532.89965820313 794.235717773438 855.005493164063",
+						"Normal": "0.0216939984255078 -0.966721928689961 -0.254907989326103"
+					}, {
+						"@id": 76,
+						"FeatureDefinitionId": 75,
+						"Location": "2545.23901367188 794.512329101563 855.006530761719",
+						"Normal": "0.0216900093642836 -0.966745445216935 -0.254819127316001"
+					}, {
+						"@id": 88,
+						"FeatureDefinitionId": 87,
+						"Location": "2449.3134765625 816.630676269531 854.999694824219",
+						"Normal": "0.0418530037094572 -0.909167062298371 -0.414323036907492"
+					}, {
+						"@id": 94,
+						"FeatureDefinitionId": 93,
+						"Location": "2408.77319335938 812.609191894531 855.004211425781",
+						"Normal": "0.991429943380046 -0.118881995203897 -0.0541639971362864"
+					}, {
+						"@id": 106,
+						"FeatureDefinitionId": 105,
+						"Location": "2448.9189453125 786.634704589844 920.781372070313",
+						"Normal": "0.0418530037094572 -0.909167062298371 -0.414323036907492"
+					}
+				],
+				"CircleFeatureNominal": [
+					{
+						"@id": 112,
+						"FeatureDefinitionId": 111,
+						"Location": "2433.974609375 800.617431640625 890.049621582031",
+						"Normal": "0.0558150216642394 -0.907624351305648 -0.416056150385524"
+					}, {
+						"@id": 122,
+						"FeatureDefinitionId": 121,
+						"Location": "",
+						"Normal": "0.041849021347662 -0.909169445910364 -0.414318208669719"
+					}, {
+						"@id": 128,
+						"FeatureDefinitionId": 127,
+						"Location": "2496.25146484375 780.842590332031 938.272277832031",
+						"Normal": "0.0418550117443374 -0.909169210311167 -0.414318120547546"
+					}, {
+						"@id": 134,
+						"FeatureDefinitionId": 133,
+						"Location": "2521.0419921875 780.010925292969 942.583374023438",
+						"Normal": "0.0418729925608207 -0.90916984077565 -0.414314920221298"
+					}
+				]
+			},
+			"FeatureItems": {
+				"EdgePointFeatureItem": [
+					{
+						"@id": 9,
+						"FeatureNominalId": 8,
+						"FeatureName": "W1RFTMRA02",
+						"QPId": "825c385d-a077-41b5-acab-74a41e3db313",
+						"DeterminationMode": {
+							"Checked": {
+								"CheckDetails": {
+									"Measured": ""
+								}
+							}
+						}
+					}, {
+						"@id": 53,
+						"FeatureNominalId": 52,
+						"FeatureName": "W1RFTMRA17",
+						"QPId": "a787b4fa-67c6-49be-be58-0397c86722d1",
+						"DeterminationMode": {
+							"Checked": {
+								"CheckDetails": {
+									"Measured": ""
+								}
+							}
+						}
+					}, {
+						"@id": 83,
+						"FeatureNominalId": 82,
+						"FeatureName": "W1RFTMRA18",
+						"QPId": "ffcd054d-81ed-4182-98e4-5ef0b2994c86",
+						"DeterminationMode": {
+							"Checked": {
+								"CheckDetails": {
+									"Measured": ""
+								}
+							}
+						}
+					}, {
+						"@id": 101,
+						"FeatureNominalId": 100,
+						"FeatureName": "W1RFTMRA01",
+						"QPId": "92e59ed9-34e9-4ac3-ab23-8fdcc1f86bfa",
+						"DeterminationMode": {
+							"Checked": {
+								"CheckDetails": {
+									"Measured": ""
+								}
+							}
+						}
+					}
+				],
+				"PointFeatureItem": [
+					{
+						"@id": 17,
+						"FeatureNominalId": 16,
+						"FeatureName": "W1RFSMRA05",
+						"QPId": "61ca698e-4fea-46cb-94ab-ee2cb15f9d1d",
+						"DeterminationMode": {
+							"Checked": {
+								"CheckDetails": {
+									"Measured": ""
+								}
+							}
+						}
+					}, {
+						"@id": 23,
+						"FeatureNominalId": 22,
+						"FeatureName": "W1RHSMRA06",
+						"QPId": "3e9d3360-6361-4952-b915-1f2476fb2e63",
+						"DeterminationMode": {
+							"Checked": {
+								"CheckDetails": {
+									"Measured": ""
+								}
+							}
+						}
+					}, {
+						"@id": 29,
+						"FeatureNominalId": 28,
+						"FeatureName": "W1RISMRA09",
+						"QPId": "b1cebe23-84a2-4b2f-8c66-e612975b95f0",
+						"DeterminationMode": {
+							"Checked": {
+								"CheckDetails": {
+									"Measured": ""
+								}
+							}
+						}
+					}, {
+						"@id": 35,
+						"FeatureNominalId": 34,
+						"FeatureName": "W1RFSMRA11",
+						"QPId": "1964608f-4aff-43ba-a5d4-86289e2feeb5",
+						"DeterminationMode": {
+							"Checked": {
+								"CheckDetails": {
+									"Measured": ""
+								}
+							}
+						}
+					}, {
+						"@id": 41,
+						"FeatureNominalId": 40,
+						"FeatureName": "W1RISMRA14",
+						"QPId": "0af649ef-a704-46f6-a37e-776702c193df",
+						"DeterminationMode": {
+							"Checked": {
+								"CheckDetails": {
+									"Measured": ""
+								}
+							}
+						}
+					}, {
+						"@id": 47,
+						"FeatureNominalId": 46,
+						"FeatureName": "W1RISMRA15",
+						"QPId": "dcf46342-c54b-47c2-a35c-c86e125bcc81",
+						"DeterminationMode": {
+							"Checked": {
+								"CheckDetails": {
+									"Measured": ""
+								}
+							}
+						}
+					}, {
+						"@id": 59,
+						"FeatureNominalId": 58,
+						"FeatureName": "W1RISMRA10",
+						"QPId": "94d28d13-9f27-4ce8-8419-6cd4b3edacaa",
+						"DeterminationMode": {
+							"Checked": {
+								"CheckDetails": {
+									"Measured": ""
+								}
+							}
+						}
+					}, {
+						"@id": 65,
+						"FeatureNominalId": 64,
+						"FeatureName": "W1RFSMRA12",
+						"QPId": "e8e172f2-2920-4d55-b7c9-a069ffe017e6",
+						"DeterminationMode": {
+							"Checked": {
+								"CheckDetails": {
+									"Measured": ""
+								}
+							}
+						}
+					}, {
+						"@id": 71,
+						"FeatureNominalId": 70,
+						"FeatureName": "W1RISMRA13",
+						"QPId": "2a401a43-b05a-4f71-9038-e760cdec5cd4",
+						"DeterminationMode": {
+							"Checked": {
+								"CheckDetails": {
+									"Measured": ""
+								}
+							}
+						}
+					}, {
+						"@id": 77,
+						"FeatureNominalId": 76,
+						"FeatureName": "W1RISMRA16",
+						"QPId": "a381b7d0-f338-4ba1-b466-596e7d6f2737",
+						"DeterminationMode": {
+							"Checked": {
+								"CheckDetails": {
+									"Measured": ""
+								}
+							}
+						}
+					}, {
+						"@id": 89,
+						"FeatureNominalId": 88,
+						"FeatureName": "W1RISMRA07",
+						"QPId": "82074ada-d93c-4543-ac4c-57c99ec74740",
+						"DeterminationMode": {
+							"Checked": {
+								"CheckDetails": {
+									"Measured": ""
+								}
+							}
+						}
+					}, {
+						"@id": 95,
+						"FeatureNominalId": 94,
+						"FeatureName": "W1RFSMRA04",
+						"QPId": "2140464f-6a6e-4ea6-a5f7-6d95f3c00537",
+						"DeterminationMode": {
+							"Checked": {
+								"CheckDetails": {
+									"Measured": ""
+								}
+							}
+						}
+					}, {
+						"@id": 107,
+						"FeatureNominalId": 106,
+						"FeatureName": "W1RISMRA08",
+						"QPId": "f56b4e93-00ff-4462-b716-2d03135e8604",
+						"DeterminationMode": {
+							"Checked": {
+								"CheckDetails": {
+									"Measured": ""
+								}
+							}
+						}
+					}
+				],
+				"CircleFeatureItem": [
+					{
+						"@id": 113,
+						"FeatureNominalId": 112,
+						"FeatureName": "W1RXXMRA19",
+						"QPId": "86e6b896-b062-4245-867f-d4181dfac35c",
+						"DeterminationMode": {
+							"Checked": {
+								"CheckDetails": {
+									"Measured": ""
+								}
+							}
+						}
+					}, {
+						"@id": 123,
+						"FeatureNominalId": 122,
+						"FeatureName": "W1RXXMRA22",
+						"QPId": "3ee22177-559e-4dd6-be95-a507745fb9b1",
+						"DeterminationMode": {
+							"Checked": {
+								"CheckDetails": {
+									"Measured": ""
+								}
+							}
+						}
+					}, {
+						"@id": 129,
+						"FeatureNominalId": 128,
+						"FeatureName": "W1RXXMRA20",
+						"QPId": "a11ae7fc-2a5b-45c9-8210-3950d6139b0d",
+						"DeterminationMode": {
+							"Checked": {
+								"CheckDetails": {
+									"Measured": ""
+								}
+							}
+						}
+					}, {
+						"@id": 135,
+						"FeatureNominalId": 134,
+						"FeatureName": "W1RXXMRA21",
+						"QPId": "5bb35cc9-23f0-4682-a6af-c1196f253d96",
+						"DeterminationMode": {
+							"Checked": {
+								"CheckDetails": {
+									"Measured": ""
+								}
+							}
+						}
+					}
+				]
+			}
+		},
+		"Characteristics": {
+			"FormalStandard": {
+				"FormalStandardEnum": "ASME-Y14.5-1994"
+			},
+			"CharacteristicDefinitions": {
+				"PointProfileCharacteristicDefinition": [
+					{
+						"@id": 10,
+						"ToleranceValue": 4,
+						"DatumReferenceFrameId": 11
+					}, {
+						"@id": 18,
+						"ToleranceValue": 1.5,
+						"DatumReferenceFrameId": 11
+					}, {
+						"@id": 24,
+						"ToleranceValue": 1.5,
+						"DatumReferenceFrameId": 11
+					}, {
+						"@id": 30,
+						"ToleranceValue": 0.5,
+						"DatumReferenceFrameId": 11
+					}, {
+						"@id": 36,
+						"ToleranceValue": 2,
+						"DatumReferenceFrameId": 11
+					}, {
+						"@id": 42,
+						"ToleranceValue": 1,
+						"DatumReferenceFrameId": 11
+					}, {
+						"@id": 48,
+						"ToleranceValue": 2,
+						"DatumReferenceFrameId": 11
+					}, {
+						"@id": 54,
+						"ToleranceValue": 3,
+						"DatumReferenceFrameId": 11
+					}, {
+						"@id": 60,
+						"ToleranceValue": 0.5,
+						"DatumReferenceFrameId": 11
+					}, {
+						"@id": 66,
+						"ToleranceValue": 1.5,
+						"DatumReferenceFrameId": 11
+					}, {
+						"@id": 72,
+						"ToleranceValue": 1,
+						"DatumReferenceFrameId": 11
+					}, {
+						"@id": 78,
+						"ToleranceValue": 2,
+						"DatumReferenceFrameId": 11
+					}, {
+						"@id": 84,
+						"ToleranceValue": 2,
+						"DatumReferenceFrameId": 11
+					}, {
+						"@id": 90,
+						"ToleranceValue": 0.5,
+						"DatumReferenceFrameId": 11
+					}, {
+						"@id": 96,
+						"ToleranceValue": 1.5,
+						"DatumReferenceFrameId": 11
+					}, {
+						"@id": 102,
+						"ToleranceValue": 4,
+						"DatumReferenceFrameId": 11
+					}, {
+						"@id": 108,
+						"ToleranceValue": 0.5,
+						"DatumReferenceFrameId": 11
+					}
+				],
+				"PositionCharacteristicDefinition": [
+					{
+						"@id": 114,
+						"ToleranceValue": 1.25,
+						"DatumReferenceFrameId": 115,
+						"MaterialCondition": "REGARDLESS",
+						"ZoneShape": {
+							"DiametricalZone": ""
+						}
+					}, {
+						"@id": 124,
+						"ToleranceValue": 1.25,
+						"DatumReferenceFrameId": 115,
+						"MaterialCondition": "REGARDLESS",
+						"ZoneShape": {
+							"DiametricalZone": ""
+						}
+					}, {
+						"@id": 130,
+						"ToleranceValue": 1.25,
+						"DatumReferenceFrameId": 115,
+						"MaterialCondition": "REGARDLESS",
+						"ZoneShape": {
+							"DiametricalZone": ""
+						}
+					}, {
+						"@id": 136,
+						"ToleranceValue": 1.25,
+						"DatumReferenceFrameId": 115,
+						"MaterialCondition": "REGARDLESS",
+						"ZoneShape": {
+							"DiametricalZone": ""
+						}
+					}
+				]
+			},
+			"CharacteristicNominals": {
+				"PointProfileCharacteristicNominal": [
+					{
+						"@id": 12,
+						"CharacteristicDefinitionId": 10
+					}, {
+						"@id": 19,
+						"CharacteristicDefinitionId": 18
+					}, {
+						"@id": 25,
+						"CharacteristicDefinitionId": 24
+					}, {
+						"@id": 31,
+						"CharacteristicDefinitionId": 30
+					}, {
+						"@id": 37,
+						"CharacteristicDefinitionId": 36
+					}, {
+						"@id": 43,
+						"CharacteristicDefinitionId": 42
+					}, {
+						"@id": 49,
+						"CharacteristicDefinitionId": 48
+					}, {
+						"@id": 55,
+						"CharacteristicDefinitionId": 54
+					}, {
+						"@id": 61,
+						"CharacteristicDefinitionId": 60
+					}, {
+						"@id": 67,
+						"CharacteristicDefinitionId": 66
+					}, {
+						"@id": 73,
+						"CharacteristicDefinitionId": 72
+					}, {
+						"@id": 79,
+						"CharacteristicDefinitionId": 78
+					}, {
+						"@id": 85,
+						"CharacteristicDefinitionId": 84
+					}, {
+						"@id": 91,
+						"CharacteristicDefinitionId": 90
+					}, {
+						"@id": 97,
+						"CharacteristicDefinitionId": 96
+					}, {
+						"@id": 103,
+						"CharacteristicDefinitionId": 102
+					}, {
+						"@id": 109,
+						"CharacteristicDefinitionId": 108
+					}
+				],
+				"PositionCharacteristicNominal": [
+					{
+						"@id": 119,
+						"CharacteristicDefinitionId": 114
+					}, {
+						"@id": 125,
+						"CharacteristicDefinitionId": 124
+					}, {
+						"@id": 131,
+						"CharacteristicDefinitionId": 130
+					}, {
+						"@id": 137,
+						"CharacteristicDefinitionId": 136
+					}
+				]
+			},
+			"CharacteristicItems": {
+				"PointProfileCharacteristicItem": [
+					{
+						"@id": 13,
+						"Name": "W1RFTMRA02V",
+						"QPId": "57a8a5f7-6309-495b-839f-ebe88ebb9a05",
+						"KeyCharacteristic": {
+							"Designator": "W1RFTMRA02V"
+						},
+						"FeatureItemIds": {
+							"@N": 1,
+							"Id": 9
+						},
+						"MeasurementDeviceIds": {
+							"@N": 1,
+							"Id": 14
+						},
+						"CharacteristicNominalId": 12
+					}, {
+						"@id": 20,
+						"Name": "W1RFSMRA05V",
+						"QPId": "79ce58ff-bb73-4a7f-958f-9f36b0bb66bb",
+						"KeyCharacteristic": {
+							"Designator": "W1RFSMRA05V"
+						},
+						"FeatureItemIds": {
+							"@N": 1,
+							"Id": 17
+						},
+						"MeasurementDeviceIds": {
+							"@N": 1,
+							"Id": 14
+						},
+						"CharacteristicNominalId": 19
+					}, {
+						"@id": 26,
+						"Name": "W1RHSMRA06V",
+						"QPId": "e4642262-3044-4579-b3fc-768b1653ea4a",
+						"KeyCharacteristic": {
+							"Designator": "W1RHSMRA06V"
+						},
+						"FeatureItemIds": {
+							"@N": 1,
+							"Id": 23
+						},
+						"MeasurementDeviceIds": {
+							"@N": 1,
+							"Id": 14
+						},
+						"CharacteristicNominalId": 25
+					}, {
+						"@id": 32,
+						"Name": "W1RISMRA09V",
+						"QPId": "82ec35a6-2bec-471b-a5df-f0c8121155d2",
+						"KeyCharacteristic": {
+							"Designator": "W1RISMRA09V"
+						},
+						"FeatureItemIds": {
+							"@N": 1,
+							"Id": 29
+						},
+						"MeasurementDeviceIds": {
+							"@N": 1,
+							"Id": 14
+						},
+						"CharacteristicNominalId": 31
+					}, {
+						"@id": 38,
+						"Name": "W1RFSMRA11V",
+						"QPId": "e5a0a4f5-428a-41c7-83e3-e8327905f0f3",
+						"KeyCharacteristic": {
+							"Designator": "W1RFSMRA11V"
+						},
+						"FeatureItemIds": {
+							"@N": 1,
+							"Id": 35
+						},
+						"MeasurementDeviceIds": {
+							"@N": 1,
+							"Id": 14
+						},
+						"CharacteristicNominalId": 37
+					}, {
+						"@id": 44,
+						"Name": "W1RISMRA14V",
+						"QPId": "6dc509d5-64cd-4cf1-8015-2a9dda7cd6cd",
+						"KeyCharacteristic": {
+							"Designator": "W1RISMRA14V"
+						},
+						"FeatureItemIds": {
+							"@N": 1,
+							"Id": 41
+						},
+						"MeasurementDeviceIds": {
+							"@N": 1,
+							"Id": 14
+						},
+						"CharacteristicNominalId": 43
+					}, {
+						"@id": 50,
+						"Name": "W1RISMRA15V",
+						"QPId": "9120b572-b82e-43e1-837a-0c3197ce4ff0",
+						"KeyCharacteristic": {
+							"Designator": "W1RISMRA15V"
+						},
+						"FeatureItemIds": {
+							"@N": 1,
+							"Id": 47
+						},
+						"MeasurementDeviceIds": {
+							"@N": 1,
+							"Id": 14
+						},
+						"CharacteristicNominalId": 49
+					}, {
+						"@id": 56,
+						"Name": "W1RFTMRA17V",
+						"QPId": "e72400ec-3860-4fe3-a1f3-4838a46cb642",
+						"KeyCharacteristic": {
+							"Designator": "W1RFTMRA17V"
+						},
+						"FeatureItemIds": {
+							"@N": 1,
+							"Id": 53
+						},
+						"MeasurementDeviceIds": {
+							"@N": 1,
+							"Id": 14
+						},
+						"CharacteristicNominalId": 55
+					}, {
+						"@id": 62,
+						"Name": "W1RISMRA10V",
+						"QPId": "4164c139-812f-456d-9c5c-19adc1082099",
+						"KeyCharacteristic": {
+							"Designator": "W1RISMRA10V"
+						},
+						"FeatureItemIds": {
+							"@N": 1,
+							"Id": 59
+						},
+						"MeasurementDeviceIds": {
+							"@N": 1,
+							"Id": 14
+						},
+						"CharacteristicNominalId": 61
+					}, {
+						"@id": 68,
+						"Name": "W1RFSMRA12V",
+						"QPId": "e0afece5-ce98-4676-93cb-40cc8ef58c14",
+						"KeyCharacteristic": {
+							"Designator": "W1RFSMRA12V"
+						},
+						"FeatureItemIds": {
+							"@N": 1,
+							"Id": 65
+						},
+						"MeasurementDeviceIds": {
+							"@N": 1,
+							"Id": 14
+						},
+						"CharacteristicNominalId": 67
+					}, {
+						"@id": 74,
+						"Name": "W1RISMRA13V",
+						"QPId": "e5a4ed2a-9c56-461c-9c31-6bb49169e508",
+						"KeyCharacteristic": {
+							"Designator": "W1RISMRA13V"
+						},
+						"FeatureItemIds": {
+							"@N": 1,
+							"Id": 71
+						},
+						"MeasurementDeviceIds": {
+							"@N": 1,
+							"Id": 14
+						},
+						"CharacteristicNominalId": 73
+					}, {
+						"@id": 80,
+						"Name": "W1RISMRA16V",
+						"QPId": "8304e65d-ff6c-4207-a047-3d1eccb0a5cc",
+						"KeyCharacteristic": {
+							"Designator": "W1RISMRA16V"
+						},
+						"FeatureItemIds": {
+							"@N": 1,
+							"Id": 77
+						},
+						"MeasurementDeviceIds": {
+							"@N": 1,
+							"Id": 14
+						},
+						"CharacteristicNominalId": 79
+					}, {
+						"@id": 86,
+						"Name": "W1RFTMRA18V",
+						"QPId": "5b3ec0b4-162f-42a0-9bfc-3b527ecb0fb2",
+						"KeyCharacteristic": {
+							"Designator": "W1RFTMRA18V"
+						},
+						"FeatureItemIds": {
+							"@N": 1,
+							"Id": 83
+						},
+						"MeasurementDeviceIds": {
+							"@N": 1,
+							"Id": 14
+						},
+						"CharacteristicNominalId": 85
+					}, {
+						"@id": 92,
+						"Name": "W1RISMRA07V",
+						"QPId": "d20d9f37-7ddc-4cd9-860b-39f16791383e",
+						"KeyCharacteristic": {
+							"Designator": "W1RISMRA07V"
+						},
+						"FeatureItemIds": {
+							"@N": 1,
+							"Id": 89
+						},
+						"MeasurementDeviceIds": {
+							"@N": 1,
+							"Id": 14
+						},
+						"CharacteristicNominalId": 91
+					}, {
+						"@id": 98,
+						"Name": "W1RFSMRA04V",
+						"QPId": "32d2fa34-c98a-47b6-8b9b-db9dfc260f9d",
+						"KeyCharacteristic": {
+							"Designator": "W1RFSMRA04V"
+						},
+						"FeatureItemIds": {
+							"@N": 1,
+							"Id": 95
+						},
+						"MeasurementDeviceIds": {
+							"@N": 1,
+							"Id": 14
+						},
+						"CharacteristicNominalId": 97
+					}, {
+						"@id": 104,
+						"Name": "W1RFTMRA01V",
+						"QPId": "374abca9-02f4-4a42-b6a1-271bd8fa997c",
+						"KeyCharacteristic": {
+							"Designator": "W1RFTMRA01V"
+						},
+						"FeatureItemIds": {
+							"@N": 1,
+							"Id": 101
+						},
+						"MeasurementDeviceIds": {
+							"@N": 1,
+							"Id": 14
+						},
+						"CharacteristicNominalId": 103
+					}, {
+						"@id": 110,
+						"Name": "W1RISMRA08V",
+						"QPId": "df0c8820-e097-4635-8506-bb97cb7f6418",
+						"KeyCharacteristic": {
+							"Designator": "W1RISMRA08V"
+						},
+						"FeatureItemIds": {
+							"@N": 1,
+							"Id": 107
+						},
+						"MeasurementDeviceIds": {
+							"@N": 1,
+							"Id": 14
+						},
+						"CharacteristicNominalId": 109
+					}
+				],
+				"PositionCharacteristicItem": [
+					{
+						"@id": 120,
+						"Name": "W1RXXMRA19P",
+						"QPId": "c7a1218d-d6b2-48ba-915b-a2ff7c27f321",
+						"KeyCharacteristic": {
+							"Designator": "W1RXXMRA19P"
+						},
+						"FeatureItemIds": {
+							"@N": 1,
+							"Id": 113
+						},
+						"MeasurementDeviceIds": {
+							"@N": 1,
+							"Id": 14
+						},
+						"CharacteristicNominalId": 119
+					}, {
+						"@id": 126,
+						"Name": "W1RXXMRA22P",
+						"QPId": "598acb41-0ef2-4007-81e6-e49a79fd4d2a",
+						"KeyCharacteristic": {
+							"Designator": "W1RXXMRA22P"
+						},
+						"FeatureItemIds": {
+							"@N": 1,
+							"Id": 123
+						},
+						"MeasurementDeviceIds": {
+							"@N": 1,
+							"Id": 14
+						},
+						"CharacteristicNominalId": 125
+					}, {
+						"@id": 132,
+						"Name": "W1RXXMRA20P",
+						"QPId": "0aaa395a-2854-4a27-a534-84aae8c95bd7",
+						"KeyCharacteristic": {
+							"Designator": "W1RXXMRA20P"
+						},
+						"FeatureItemIds": {
+							"@N": 1,
+							"Id": 129
+						},
+						"MeasurementDeviceIds": {
+							"@N": 1,
+							"Id": 14
+						},
+						"CharacteristicNominalId": 131
+					}, {
+						"@id": 138,
+						"Name": "W1RXXMRA21P",
+						"QPId": "26c8cdff-5870-4518-b454-16f6423b9d46",
+						"KeyCharacteristic": {
+							"Designator": "W1RXXMRA21P"
+						},
+						"FeatureItemIds": {
+							"@N": 1,
+							"Id": 135
+						},
+						"MeasurementDeviceIds": {
+							"@N": 1,
+							"Id": 14
+						},
+						"CharacteristicNominalId": 137
+					}
+				]
+			}
+		},
+		"MeasurementPlan": {
+			"Version": {
+				"ThisInstanceQPId": "11378ccd-e0e1-42bd-8f27-6e803ea8b6d0"
+			},
+			"UnorderedPlanRoot": {
+				"Steps": {
+					"MeasureEvaluateAll": ""
+				}
+			}
+		}
+	}
+}
