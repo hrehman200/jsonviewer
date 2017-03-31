@@ -1,12 +1,4 @@
-.container {
-    width: 1200px;
-}
-
-.row div {
-    white-space: normal;
-}
-
-ul:first-child {
+.tree {
     border: 1px solid #aaaaaa;
 }
 
@@ -48,7 +40,7 @@ ul:first-child {
     margin-left:0;
 }
 li.branch {
-    border: 1px solid #aaaaaa;
+    border-bottom: 1px solid #aaaaaa;
 }
 .tree ul li:before {
     content:"";
@@ -90,22 +82,14 @@ li.branch {
     padding:0px 0px 0px 0px;
     outline: 0;
 }
-
-
 .tree .row {
     margin: 0;
 }
-.tree .col-md-6 {
+.tree .row div {
     padding-left: 3px;
     /*border-bottom: 1px solid #aaaaaa;*/
-    border-top: 1px solid #aaaaaa;
-
-}
-
-.tree .col-md-6:first-child {
     /*border-top: 1px solid #aaaaaa;*/
-    border-right: 1px solid #aaaaaa;
-    border-left: 1px solid #aaaaaa;
+
 }
 
 .brackets {
@@ -117,11 +101,12 @@ li.branch {
     background-color: #FFFFE0;
 }
 
-.row .col-md-1 {
+.row > div.col-md-1 {
     text-align: right;
 }
 
-/*.col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9 {
-    padding-left: 0;
-    padding-right: 0;
-}*/
+.tree .nowrap {
+    text-wrap: none;
+    white-space: nowrap;
+    overflow: hidden;
+}
