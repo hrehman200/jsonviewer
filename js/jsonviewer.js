@@ -2,55 +2,6 @@ $(function () {
 
     var html = "";
 
-    $.fn.overflown = function(){
-        var e = this[0];
-        var result = e.scrollHeight > e.clientHeight || e.scrollWidth > e.clientWidth;
-        return result;
-    };
-
-    $.fn.extend({
-        treed: function (o) {
-
-            var openedClass = 'glyphicon-chevron-up';
-            var closedClass = 'glyphicon-chevron-down';
-
-            //initialize each of the top levels
-            var tree = $(this);
-            tree.addClass("tree");
-            tree.find('li > ul').each(function () {
-                var branch = $(this).parent(); //li with children ul
-                branch.prepend("<i class='indicator glyphicon " + closedClass + "'></i>");
-                branch.on('click', function (e) {
-                    if (this == e.target) {
-                        var icon = $(this).children('i:first');
-                        icon.toggleClass(openedClass + " " + closedClass);
-                        $(this).children().children().toggle();
-                    }
-                });
-                branch.children().children().toggle();
-            });
-
-            //fire event from the dynamically added icon
-            $('.tree .branch .indicator').on('click', function () {
-                $(this).closest('li').click();
-            });
-
-            //fire event to open branch if the li contains an anchor instead of text
-            $('.tree .branch>a').on('click', function (e) {
-                $(this).closest('li').click();
-                e.preventDefault();
-            });
-
-            $('.tree .branch ul').on('click', function (e) {
-                e.stopImmediatePropagation();
-                e.preventDefault();
-                if (e.clientX > $(this).offset().left && e.clientX < $(this).offset().left + 20) {
-                    $(this).parent().click();
-                }
-            });
-        }
-    });
-
     // suppress invalid json warning while loading json file
     $.ajaxSetup({
         beforeSend: function (xhr) {
@@ -60,6 +11,7 @@ $(function () {
         }
     });
 
+    // load json file and generate the tree
     $.getJSON("./data/sample.json", function (json) {
 
         html = "";
@@ -67,62 +19,17 @@ $(function () {
             generateHtmlForJsonObj(key, json[key]);
         }
 
-        $('#tree2').append(html)
-            .treed({openedClass:'glyphicon-chevron-up', closedClass:'glyphicon-chevron-down'});
-
-        //$('li').show();
-
-        $('.subTable .row').each(function() {
-            var divs = $(this).find('> div[class*="col-md-"]');
-            if(divs.length > 2) {
-                while(sumOfGridColumns(divs) < 12) {
-                    incrementGridColumns(divs);
-                }
-            }
-        });
-
-        $('.subTable .row > div[class*="col-md-"]').each(function() {
-             if($(this).overflown()) {
-                 console.log($(this).attr('class'));
-
-                 var previousWidth = Number($('.container-fluid').css('width').replace('px', ''));
-                 //$('.container-fluid').css('width', (previousWidth + 30) + 'px');
-             }
-        });
+        $('#jsonTree').append(html);
+        setUIEventsOnTree($('#jsonTree'));
+        adjustLayout();
     });
 
-    function sumOfGridColumns(divs) {
-        var sum = 0;
-        for(var i=0; i<divs.length; i++) {
-            var div = $(divs[i]);
-            sum += getColumnClassNumber(div);
-        }
-        return sum;
-    }
-
-    function incrementGridColumns(divs) {
-        for(var i=divs.length; i>1; i--) {
-            var div = $(divs[i]);
-            var no = getColumnClassNumber(div);
-            no += 1;
-
-            div.attr('class', 'col-md-'+no);
-        }
-    }
-
-    function getColumnClassNumber(div) {
-        var className = div.attr('class');
-        if(typeof className == 'undefined') {
-            return 0;
-        }
-        if(className.indexOf(" ") !== -1) {
-            var arr = className.split(" ");
-            className = arr[0];
-        }
-        var no = className.split("-")[2];
-        return Number(no);
-    }
-
+    /**
+     * Recursive function that fills up the html variable with branches and nodes.
+     *
+     * @param key The current key of json object
+     * @param jsonObj The current corresponding json object/array for the key
+     */
     function generateHtmlForJsonObj(key, jsonObj) {
 
         if($.isArray(jsonObj)) {
@@ -141,10 +48,11 @@ $(function () {
             var header = '<li><div class="row row-eq-height yellowbg">'+ headerColumns + '</div></li>';
             html += header;
 
+            // append table body
             for (var row=0; row<jsonArray.length; row++) {
                 html += '<li>' +
                     '<div class="row row-eq-height">' +
-                        '<div class="col-md-1 yellowbg"><b>'+(row+1)+'</b></div>';
+                    '<div class="col-md-1 yellowbg"><b>'+(row+1)+'</b></div>';
 
                 for(var col=0; col<keysArray.length; col++) {
 
@@ -167,19 +75,16 @@ $(function () {
                     </li>';
             }
 
-            html += '</ul>';
-
-            html += '</li>';
+            html += '</ul> \
+                </li>';
 
         } else if(typeof jsonObj == 'object') {
 
             html += '<li class="branch nowrap"><a href="javascript:;">'+key+'</a> \
                 <ul>';
-
             for(var key2 in jsonObj) {
                 generateHtmlForJsonObj(key2, jsonObj[key2]);
             }
-
             html += '</ul> \
                 </li>';
 
@@ -194,6 +99,126 @@ $(function () {
     }
 
     /**
+     * Replace undefined or empty values with whitespace character
+     *
+     * @param val
+     * @returns {string}
+     */
+    function cleanValue(val) {
+        return typeof(val) == 'undefined' || val == '' ? '&nbsp;' : val;
+    }
+
+    /**
+     * Add open/close icons and set events for them
+     *
+     * @param tree
+     */
+    function setUIEventsOnTree(tree) {
+
+        var openedClass = 'glyphicon-chevron-up';
+        var closedClass = 'glyphicon-chevron-down';
+
+        //initialize each of the top levels
+        tree.addClass("tree");
+        tree.find('li > ul').each(function () {
+            var branch = $(this).parent(); //li with children ul
+            branch.prepend("<i class='indicator glyphicon " + closedClass + "'></i>");
+            branch.on('click', function (e) {
+                if (this == e.target) {
+                    var icon = $(this).children('i:first');
+                    icon.toggleClass(openedClass + " " + closedClass);
+                    $(this).children().children().toggle();
+                }
+            });
+            branch.children().children().toggle();
+        });
+
+        //fire event from the dynamically added icon
+        $('.tree .branch .indicator').on('click', function () {
+            $(this).closest('li').click();
+        });
+
+        //fire event to open branch from li text
+        $('.tree .branch>a').on('click', function (e) {
+            $(this).closest('li').click();
+            e.preventDefault();
+        });
+
+        // open/close branch from vertical button
+        $('.tree .branch ul').on('click', function (e) {
+            e.stopImmediatePropagation();
+            e.preventDefault();
+            if (e.clientX > $(this).offset().left && e.clientX < $(this).offset().left + 20) {
+                $(this).parent().click();
+            }
+        });
+    }
+
+    /**
+     * Adjust layout so that columns fill the bootstrap 12-column grid
+     */
+    function adjustLayout() {
+        $('.subTable .row').each(function() {
+            var divs = $(this).find('> div[class*="col-md-"]');
+            if(divs.length > 2) {
+                while(sumOfGridColumns(divs) < 12) {
+                    incrementGridColumns(divs);
+                }
+            }
+        });
+    }
+
+    /**
+     * The sum of col-md-* classes in a given row.
+     *
+     * @param divs
+     * @returns {number}
+     */
+    function sumOfGridColumns(divs) {
+        var sum = 0;
+        for(var i=0; i<divs.length; i++) {
+            var div = $(divs[i]);
+            sum += getColumnClassNumber(div);
+        }
+        return sum;
+    }
+
+    /**
+     * Increment class no so that col-md-* classes expand to fill layout
+     *
+     * @param divs
+     */
+    function incrementGridColumns(divs) {
+        for(var i=divs.length; i>1; i--) {
+            var div = $(divs[i]);
+            var no = getColumnClassNumber(div);
+            no += 1;
+
+            div.attr('class', 'col-md-'+no);
+        }
+    }
+
+    /**
+     * Given a div with class="col-md-5", returns 5
+     *
+     * @param div
+     * @returns {number}
+     */
+    function getColumnClassNumber(div) {
+        var className = div.attr('class');
+        if(typeof className == 'undefined') {
+            return 0;
+        }
+        if(className.indexOf(" ") !== -1) {
+            var arr = className.split(" ");
+            className = arr[0];
+        }
+        var no = className.split("-")[2];
+        return Number(no);
+    }
+
+    /**
+     * For jsonArrays, returns the column headings (e.g. ) and classes (e.g. col-md-4)
      *
      * @param jsonArray
      * @returns {Array}
@@ -249,16 +274,6 @@ $(function () {
         }
 
         return keysArray;
-    }
-
-    /**
-     * Replace undefined or empty values with whitespace character
-     *
-     * @param val
-     * @returns {string}
-     */
-    function cleanValue(val) {
-        return typeof(val) == 'undefined' || val == '' ? '&nbsp;' : val;
     }
 });
 

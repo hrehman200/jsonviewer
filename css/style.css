@@ -1,3 +1,7 @@
+.row div {
+    white-space: normal;
+}
+
 .tree {
     border: 1px solid #aaaaaa;
 }
